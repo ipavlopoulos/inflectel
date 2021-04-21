@@ -337,6 +337,19 @@ class adjectives:
 class verb:
 
     def __init__(self, lemma, syzigia='A', category="a"):
+        self.lemma = lemma
+        self.syzigia = syzigia
+        self.category = category
+
+    def normal(self, lemma, syzigia, category):
+        """
+        Based on the solution of AM296-f3662010
+
+        :param lemma:
+        :param syzigia:
+        :param category:
+        :return:
+        """
         inflection = []
         if syzigia == "A":
             if category == "a":
@@ -377,17 +390,17 @@ class verb:
         return inflection
 
 
-class idioklita:
-    # Solution by AM296-f3662009
-    def __init__(self, lemma):
-        self.lemma = lemma
-
-
-    def klisi(self):
-        print(self.lemma + "ω",
-              self.lemma + "ς",
-              self.lemma + "ει",
-              self.lemma + "με",
-              self.lemma + "τε",
-              self.lemma + "νε")
-
+    def idioklita(self, lemma):
+        """
+        Based on the solution of AM296-f3662009
+        :param lemma:
+        :return:
+        """
+        inflection = []
+        inflection.append(lemma + "ω")
+        inflection.append(lemma + "ς")
+        inflection.append(lemma + "ει")
+        inflection.append(lemma + "με")
+        inflection.append(lemma + "τε")
+        inflection.append(lemma + "νε")
+        return inflection
