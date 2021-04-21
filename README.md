@@ -1,0 +1,2 @@
+# inflectel
+Inflect greek words
