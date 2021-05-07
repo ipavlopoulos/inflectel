@@ -1,15 +1,17 @@
 x= input("In which category does the lemma ,that you will entry, belong? Please input 'A' for verb or 'B' for adjective: ")
+
 if x == 'A' :
-  lemma=input("Please input the thema of the word, ex: for word : 'κλίνω' input 'κλιν-' : ") 
-  syzigia=input("In which conjuction does the verb belong? Please input 'A' or 'B' or 'Irregular Verb' or 'Contracting Verb': ")
-  category=input("In which category does the verb belong? Please input 'a' or 'b' : ") 
-else : 
-  lemma_adj=input("Please input the thema of the word, ex: for word : 'καλός' input 'καλ' : ") 
-  category_adj=input("In which category does the adjective belong? \n Please input: \n 'a1' for adjectives -ος, -η, -ο \n 'a2' for -ός, -ή, -ό \n 'b' for -ος, -α, -ο \n 'c' for -ός, -ιά, -ό \n 'd' for -ύς, ιά, -ύ \n 'e' for -ύς, -εία, -ύ \n 'f' for -ής, -ιά, -ί \n 'g' for -ής, -ής, -ές \n 'h' for -ης, -α, -ικο \n 'i' for -ας, -ού, -άδικο/-ούδικο \n 'polis' for irregular adjective πολύς, πολλή, πολύ   ")
-
-
+  lemma= input("Please input the thema of the word, ex: for word : 'κλίνω' input 'κλιν-' : ") 
+  syzigia= input("In which conjuction does the verb belong? Please input 'A' or 'B' or 'Irregular Verb' or 'Contracting Verb': ")
+  category= input("In which category does the verb belong? Please input 'a' or 'b' : ") 
+elif x == 'B' : 
+  lemma_adj= input("Please input the thema of the word, ex: for word : 'καλός' input 'καλ' : ") 
+  category_adj= input("In which category does the adjective belong? \n Please input: \n 'a1' for adjectives -ος, -η, -ο \n 'a2' for -ός, -ή, -ό \n 'b' for -ος, -α, -ο \n 'c' for -ός, -ιά, -ό \n 'd' for -ύς, ιά, -ύ \n 'e' for -ύς, -εία, -ύ \n 'f' for -ής, -ιά, -ί \n 'g' for -ής, -ής, -ές \n 'h' for -ης, -α, -ικο \n 'i' for -ας, -ού, -άδικο/-ούδικο \n 'polis' for irregular adjective πολύς, πολλή, πολύ   ")
+else:
+  print('No other categories implemented yet.')
 
 class adjectives:
+
     # Based on the solution of AM296-f3662010
     def __init__(self, lemma, category):
         inflection = []
@@ -21,15 +23,10 @@ class adjectives:
         inflection.append(neutral)
 
 # Adjectives belong to categories.
+
+
+
 inflection=[]
-masculine=[]
-feminine=[]
-neutral=[]
-
-inflection.append(masculine)
-inflection.append(feminine)
-inflection.append(neutral)
-
 if category_adj == "a1":
             # Adjectives: -ος, -η, -ο
             masculine.append(lemma_adj + 'ος')
@@ -171,7 +168,7 @@ elif category_adj == "d":
             neutral.append(lemma_adj + 'ύ')
             neutral.append(lemma_adj + 'ύ')
             neutral.append(lemma_adj + 'ιά')
-            neutral.append(lemma_adj + 'ιών')
+            neutral.append(lemma_adj+ 'ιών')
             neutral.append(lemma_adj + 'ιά')
             neutral.append(lemma_adj + 'ιά')
 
@@ -329,7 +326,7 @@ elif category_adj == "polis":
             masculine.append(lemma_adj + 'λοί')
             masculine.append(lemma_adj + 'λών')
             masculine.append(lemma_adj + 'λούς')
-            masculine.append('(' + lemma_adj + 'λοί' + ')')  # Rarely used
+            masculine.append('(' + lemma_adj  + 'λοί' + ')')  # Rarely used
 
             feminine.append(lemma_adj + 'λή')
             feminine.append(lemma_adj + 'λής')
@@ -349,81 +346,76 @@ elif category_adj == "polis":
             neutral.append(lemma_adj + 'λά')
             neutral.append('(' + lemma_adj + 'λά' + ')')  # Rarely used
 else:
-     print('ERROR: No other POS implemented yet…')
+      print('ERROR: No other category implemented yet…')
             # There are a few adjective categories remaining.
-print(inflection) 
+            
+print(inflection)
 
 
 class verb:
 
-    def __init__(self, lemma, syzigia, category) :
+    def __init__(self, lemma, syzigia, category):
         self.lemma = lemma
         self.syzigia = syzigia
         self.category = category
 
+
     def inflect(lemma, syzigia, category):
-        """
-        Based on the solution of AM296-f3662010
-
-        :param lemma:
-        :param syzigia:
-        :param category:
-        :return:
-        """
-        inflection = []
-        syzigia
-        category
+          inflection = []
+          syzigia
+          category
 
 
-inflection=[]
-if syzigia == "A":
-    if category == "a":
-            inflection.append(lemma + 'ω')
-            inflection.append(lemma + 'εις')
-            inflection.append(lemma + 'ει')
-            inflection.append(lemma + 'ουμε')
-            inflection.append(lemma + 'ετε')
-            inflection.append(lemma + 'ουν' + '/' + lemma + 'ουνε')
+          
+inflection= []
+
+if syzigia=="A":
+    if category=="a":
+          inflection.append(lemma + 'ω')
+          inflection.append(lemma + 'εις')
+          inflection.append(lemma + 'ει')
+          inflection.append(lemma + 'ουμε')
+          inflection.append(lemma + 'ετε')
+          inflection.append(lemma + 'ουν' + '/' + lemma + 'ουνε')
     else:
-            print('ERROR: No other category exists.')
-
-elif syzigia == "B":
+          print('ERROR: No other category implemented yet…')         
+elif syzigia == "B":        
     if category == "a":
-            inflection.append(lemma + 'άω' + '/' + lemma + 'ώ')
-            inflection.append(lemma + 'άς')
-            inflection.append(lemma + 'άει' + '/' + lemma + 'ά')
-            inflection.append(lemma + 'άμε' + '/' + lemma + 'ούμε')
-            inflection.append(lemma + 'άτε')
-            inflection.append(lemma + 'άν' + '/' + lemma + 'ούν')
+          inflection.append(lemma + 'άω' + '/' + lemma + 'ώ')
+          inflection.append(lemma + 'άς')
+          inflection.append(lemma + 'άει' + '/' + lemma + 'ά')
+          inflection.append(lemma + 'άμε' + '/' + lemma + 'ούμε')
+          inflection.append(lemma + 'άτε')
+          inflection.append(lemma + 'άν' + '/' + lemma + 'ούν')
+                  
     elif category == "b":
-            inflection.append(lemma + 'ώ')
-            inflection.append(lemma + 'είς')
-            inflection.append(lemma + 'εί')
-            inflection.append(lemma + 'ούμε')
-            inflection.append(lemma + 'είτε')
-            inflection.append(lemma + 'ούν' + '/' + lemma + 'ούνε')
+          inflection.append(lemma + 'ώ')
+          inflection.append(lemma + 'είς')
+          inflection.append(lemma + 'εί')
+          inflection.append(lemma + 'ούμε')
+          inflection.append(lemma + 'είτε')
+          inflection.append(lemma + 'ούν' + '/' + lemma + 'ούνε')
     else:
-            print('ERROR: No other category exists.')
-
-elif syzigia == "Irregular Verb":
-            # irregular verbs(syzigia=="irregular")
-            inflection.append(lemma + 'ω')
-            inflection.append(lemma + 'ς')
-            inflection.append(lemma + 'ει')
-            inflection.append(lemma + 'με')
-            inflection.append(lemma + 'τε')
-            inflection.append(lemma + 'νε')
-
-elif syzigia == "Contracting Verb":
-            inflection.append(lemma + "ω")
-            inflection.append(lemma + "ς")
-            inflection.append(lemma + "ει")
-            inflection.append(lemma + "με")
-            inflection.append(lemma + "τε")
-            inflection.append(lemma + "νε")
-
+          print('ERROR: No other category exists.')        
+                    
+elif syzigia == "Irregular Verb" :
+          inflection.append(lemma + 'ω')
+          inflection.append(lemma + 'ς')
+          inflection.append(lemma + 'ει')
+          inflection.append(lemma + 'με')
+          inflection.append(lemma + 'τε')
+          inflection.append(lemma + 'νε')
+                    
+elif syzigia == "Contracting Verb" :
+          inflection.append(lemma + "ω")
+          inflection.append(lemma + "ς")
+          inflection.append(lemma + "ει")
+          inflection.append(lemma + "με")
+          inflection.append(lemma + "τε")
+          inflection.append(lemma + "νε")
+                
 else :
-        print('No other "syzigia" implemented yet... ')
+        print('ERROR: No other "syzigia" implemented yet…')
+                
 
-
-print(inflection)
+print(inflection) 
