@@ -1,3 +1,14 @@
+x= input("In which category does the lemma ,that you will entry, belong? Please input 'A' for verb or 'B' for adjective: ")
+if x == 'A' :
+  lemma=input("Please input the thema of the word, ex: for word : 'κλίνω' input 'κλιν-' : ") 
+  syzigia=input("In which conjuction does the verb belong? Please input 'A' or 'B' or 'Irregular Verb' or 'Contracting Verb': ")
+  category=input("In which category does the verb belong? Please input 'a' or 'b' : ") 
+else : 
+  lemma_adj=input("Please input the thema of the word, ex: for word : 'καλός' input 'καλ' : ") 
+  category_adj=input("In which category does the adjective belong? \n Please input: \n 'a1' for adjectives -ος, -η, -ο \n 'a2' for -ός, -ή, -ό \n 'b' for -ος, -α, -ο \n 'c' for -ός, -ιά, -ό \n 'd' for -ύς, ιά, -ύ \n 'e' for -ύς, -εία, -ύ \n 'f' for -ής, -ιά, -ί \n 'g' for -ής, -ής, -ές \n 'h' for -ης, -α, -ικο \n 'i' for -ας, -ού, -άδικο/-ούδικο \n 'polis' for irregular adjective πολύς, πολλή, πολύ   ")
+
+
+
 class adjectives:
     # Based on the solution of AM296-f3662010
     def __init__(self, lemma, category):
@@ -9,339 +20,348 @@ class adjectives:
         inflection.append(feminine)
         inflection.append(neutral)
 
-        # Adjectives belong to categories.
-        if category == "a1":
+# Adjectives belong to categories.
+inflection=[]
+masculine=[]
+feminine=[]
+neutral=[]
+
+inflection.append(masculine)
+inflection.append(feminine)
+inflection.append(neutral)
+
+if category_adj == "a1":
             # Adjectives: -ος, -η, -ο
-            masculine.append(lemma + 'ος')
-            masculine.append(lemma + 'ου')
-            masculine.append(lemma + 'ο')
-            masculine.append(lemma + 'ε')
-            masculine.append(lemma + 'οι')
-            masculine.append(lemma + 'ων')
-            masculine.append(lemma + 'ους')
-            masculine.append(lemma + 'οι')
+            masculine.append(lemma_adj + 'ος')
+            masculine.append(lemma_adj + 'ου')
+            masculine.append(lemma_adj + 'ο')
+            masculine.append(lemma_adj + 'ε')
+            masculine.append(lemma_adj + 'οι')
+            masculine.append(lemma_adj + 'ων')
+            masculine.append(lemma_adj + 'ους')
+            masculine.append(lemma_adj + 'οι')
 
-            feminine.append(lemma + 'η')
-            feminine.append(lemma + 'ης')
-            feminine.append(lemma + 'η')
-            feminine.append(lemma + 'η')
-            feminine.append(lemma + 'ες')
-            feminine.append(lemma + 'ων')
-            feminine.append(lemma + 'ες')
-            feminine.append(lemma + 'ες')
+            feminine.append(lemma_adj + 'η')
+            feminine.append(lemma_adj + 'ης')
+            feminine.append(lemma_adj + 'η')
+            feminine.append(lemma_adj + 'η')
+            feminine.append(lemma_adj + 'ες')
+            feminine.append(lemma_adj + 'ων')
+            feminine.append(lemma_adj + 'ες')
+            feminine.append(lemma_adj + 'ες')
 
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'ου')
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'α')
-            neutral.append(lemma + 'ων')
-            neutral.append(lemma + 'α')
-            neutral.append(lemma + 'α')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'ου')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'α')
+            neutral.append(lemma_adj + 'ων')
+            neutral.append(lemma_adj + 'α')
+            neutral.append(lemma_adj + 'α')
 
-        elif category == "a2":
+elif category_adj == "a2":
             # Adjectives: -ός, -ή, -ό
-            masculine.append(lemma + 'ός')
-            masculine.append(lemma + 'ού')
-            masculine.append(lemma + 'ό')
-            masculine.append(lemma + 'έ')
-            masculine.append(lemma + 'οί')
-            masculine.append(lemma + 'ών')
-            masculine.append(lemma + 'ούς')
-            masculine.append(lemma + 'οί')
+            masculine.append(lemma_adj + 'ός')
+            masculine.append(lemma_adj + 'ού')
+            masculine.append(lemma_adj + 'ό')
+            masculine.append(lemma_adj + 'έ')
+            masculine.append(lemma_adj + 'οί')
+            masculine.append(lemma_adj + 'ών')
+            masculine.append(lemma_adj + 'ούς')
+            masculine.append(lemma_adj + 'οί')
 
-            feminine.append(lemma + 'ή')
-            feminine.append(lemma + 'ής')
-            feminine.append(lemma + 'ή')
-            feminine.append(lemma + 'ή')
-            feminine.append(lemma + 'ές')
-            feminine.append(lemma + 'ών')
-            feminine.append(lemma + 'ές')
-            feminine.append(lemma + 'ές')
+            feminine.append(lemma_adj + 'ή')
+            feminine.append(lemma_adj + 'ής')
+            feminine.append(lemma_adj + 'ή')
+            feminine.append(lemma_adj + 'ή')
+            feminine.append(lemma_adj + 'ές')
+            feminine.append(lemma_adj + 'ών')
+            feminine.append(lemma_adj + 'ές')
+            feminine.append(lemma_adj + 'ές')
 
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ού')
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ά')
-            neutral.append(lemma + 'ών')
-            neutral.append(lemma + 'ά')
-            neutral.append(lemma + 'ά')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ού')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ά')
+            neutral.append(lemma_adj + 'ών')
+            neutral.append(lemma_adj + 'ά')
+            neutral.append(lemma_adj + 'ά')
 
-        elif category == "b":
+elif category_adj == "b":
             # Adjectives: -ος, -α, -ο
-            masculine.append(lemma + 'ος')
-            masculine.append(lemma + 'ου')
-            masculine.append(lemma + 'ο')
-            masculine.append(lemma + 'ε')
-            masculine.append(lemma + 'οι')
-            masculine.append(lemma + 'ων')
-            masculine.append(lemma + 'ους')
-            masculine.append(lemma + 'οι')
+            masculine.append(lemma_adj + 'ος')
+            masculine.append(lemma_adj + 'ου')
+            masculine.append(lemma_adj + 'ο')
+            masculine.append(lemma_adj + 'ε')
+            masculine.append(lemma_adj + 'οι')
+            masculine.append(lemma_adj + 'ων')
+            masculine.append(lemma_adj + 'ους')
+            masculine.append(lemma_adj + 'οι')
 
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'ας')
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'ες')
-            feminine.append(lemma + 'ων')
-            feminine.append(lemma + 'ες')
-            feminine.append(lemma + 'ες')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'ας')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'ες')
+            feminine.append(lemma_adj + 'ων')
+            feminine.append(lemma_adj + 'ες')
+            feminine.append(lemma_adj + 'ες')
 
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'ου')
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'ο')
-            neutral.append(lemma + 'α')
-            neutral.append(lemma + 'ων')
-            neutral.append(lemma + 'α')
-            neutral.append(lemma + 'α')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'ου')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'ο')
+            neutral.append(lemma_adj + 'α')
+            neutral.append(lemma_adj + 'ων')
+            neutral.append(lemma_adj + 'α')
+            neutral.append(lemma_adj + 'α')
 
-        elif category == "c":
+elif category_adj == "c":
             # Adjectives: -ός, -ιά, -ό
-            masculine.append(lemma + 'ός')
-            masculine.append(lemma + 'ού')
-            masculine.append(lemma + 'ό')
-            masculine.append(lemma + 'έ')
-            masculine.append(lemma + 'οί')
-            masculine.append(lemma + 'ών')
-            masculine.append(lemma + 'ούς')
-            masculine.append(lemma + 'οί')
+            masculine.append(lemma_adj + 'ός')
+            masculine.append(lemma_adj + 'ού')
+            masculine.append(lemma_adj + 'ό')
+            masculine.append(lemma_adj + 'έ')
+            masculine.append(lemma_adj + 'οί')
+            masculine.append(lemma_adj + 'ών')
+            masculine.append(lemma_adj + 'ούς')
+            masculine.append(lemma_adj + 'οί')
 
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιάς')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ές')
-            feminine.append(lemma + 'ών')
-            feminine.append(lemma + 'ές')
-            feminine.append(lemma + 'ές')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιάς')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ές')
+            feminine.append(lemma_adj + 'ών')
+            feminine.append(lemma_adj + 'ές')
+            feminine.append(lemma_adj + 'ές')
 
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ού')
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ό')
-            neutral.append(lemma + 'ά')
-            neutral.append(lemma + 'ών')
-            neutral.append(lemma + 'ά')
-            neutral.append(lemma + 'ά')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ού')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ό')
+            neutral.append(lemma_adj + 'ά')
+            neutral.append(lemma_adj + 'ών')
+            neutral.append(lemma_adj + 'ά')
+            neutral.append(lemma_adj + 'ά')
 
-        elif category == "d":
+elif category_adj == "d":
             # Adgectives: -ύς, ιά, -ύ
-            masculine.append(lemma + 'ύς')
-            masculine.append(lemma + 'ύ' + '/' + lemma + 'ιού')
-            masculine.append(lemma + 'ύ')
-            masculine.append(lemma + 'ύ')
-            masculine.append(lemma + 'ιοί')
-            masculine.append(lemma + 'ιών')
-            masculine.append(lemma + 'ιούς')
-            masculine.append(lemma + 'ιοί')
+            masculine.append(lemma_adj + 'ύς')
+            masculine.append(lemma_adj + 'ύ' + '/' + lemma_adj + 'ιού')
+            masculine.append(lemma_adj + 'ύ')
+            masculine.append(lemma_adj + 'ύ')
+            masculine.append(lemma_adj + 'ιοί')
+            masculine.append(lemma_adj + 'ιών')
+            masculine.append(lemma_adj + 'ιούς')
+            masculine.append(lemma_adj + 'ιοί')
 
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιάς')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιές')
-            feminine.append(lemma + 'ιών')
-            feminine.append(lemma + 'ιές')
-            feminine.append(lemma + 'ιές')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιάς')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιές')
+            feminine.append(lemma_adj + 'ιών')
+            feminine.append(lemma_adj + 'ιές')
+            feminine.append(lemma_adj + 'ιές')
 
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'ύ' + '/' + lemma + 'ιού')
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'ιά')
-            neutral.append(lemma + 'ιών')
-            neutral.append(lemma + 'ιά')
-            neutral.append(lemma + 'ιά')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'ύ' + '/' + lemma_adj + 'ιού')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'ιά')
+            neutral.append(lemma_adj + 'ιών')
+            neutral.append(lemma_adj + 'ιά')
+            neutral.append(lemma_adj + 'ιά')
 
-        elif category == "e":
+elif category_adj == "e":
             # Adjectives: -ύς, -εία, -ύ
-            masculine.append(lemma + 'ύς')
-            masculine.append(lemma + 'έος')
-            masculine.append(lemma + 'ύ')
-            masculine.append(lemma + 'ύ')
-            masculine.append(lemma + 'είς')
-            masculine.append(lemma + 'έων')
-            masculine.append(lemma + 'είς')
-            masculine.append(lemma + 'είς')
+            masculine.append(lemma_adj + 'ύς')
+            masculine.append(lemma_adj + 'έος')
+            masculine.append(lemma_adj + 'ύ')
+            masculine.append(lemma_adj + 'ύ')
+            masculine.append(lemma_adj + 'είς')
+            masculine.append(lemma_adj + 'έων')
+            masculine.append(lemma_adj + 'είς')
+            masculine.append(lemma_adj + 'είς')
 
-            feminine.append(lemma + 'εία')
-            feminine.append(lemma + 'είας')
-            feminine.append(lemma + 'εία')
-            feminine.append(lemma + 'εία')
-            feminine.append(lemma + 'είες')
-            feminine.append(lemma + 'ειών')
-            feminine.append(lemma + 'είες')
-            feminine.append(lemma + 'είες')
+            feminine.append(lemma_adj + 'εία')
+            feminine.append(lemma_adj + 'είας')
+            feminine.append(lemma_adj + 'εία')
+            feminine.append(lemma_adj + 'εία')
+            feminine.append(lemma_adj + 'είες')
+            feminine.append(lemma_adj + 'ειών')
+            feminine.append(lemma_adj + 'είες')
+            feminine.append(lemma_adj + 'είες')
 
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'έος')
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'ύ')
-            neutral.append(lemma + 'έα')
-            neutral.append(lemma + 'έων')
-            neutral.append(lemma + 'έα')
-            neutral.append(lemma + 'έα')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'έος')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append(lemma_adj + 'έα')
+            neutral.append(lemma_adj + 'έων')
+            neutral.append(lemma_adj + 'έα')
+            neutral.append(lemma_adj + 'έα')
 
-        elif category == "f":
+elif category_adj == "f":
             # Adjectives: -ής, -ιά, -ί
-            masculine.append(lemma + 'ής')
-            masculine.append(lemma + 'ή' + '/' + lemma + 'ιού')
-            masculine.append(lemma + 'ή')
-            masculine.append(lemma + 'ή')
-            masculine.append(lemma + 'ιοί')
-            masculine.append(lemma + 'ιών')
-            masculine.append(lemma + 'ιούς')
-            masculine.append(lemma + 'ιοί')
+            masculine.append(lemma_adj + 'ής')
+            masculine.append(lemma_adj + 'ή' + '/' + lemma_adj + 'ιού')
+            masculine.append(lemma_adj + 'ή')
+            masculine.append(lemma_adj + 'ή')
+            masculine.append(lemma_adj + 'ιοί')
+            masculine.append(lemma_adj + 'ιών')
+            masculine.append(lemma_adj + 'ιούς')
+            masculine.append(lemma_adj + 'ιοί')
 
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιάς')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιά')
-            feminine.append(lemma + 'ιές')
-            feminine.append(lemma + 'ιών')
-            feminine.append(lemma + 'ιές')
-            feminine.append(lemma + 'ιές')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιάς')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιά')
+            feminine.append(lemma_adj + 'ιές')
+            feminine.append(lemma_adj + 'ιών')
+            feminine.append(lemma_adj + 'ιές')
+            feminine.append(lemma_adj + 'ιές')
 
-            neutral.append(lemma + 'ί')
-            neutral.append(lemma + 'ιού')
-            neutral.append(lemma + 'ί')
-            neutral.append(lemma + 'ί')
-            neutral.append(lemma + 'ιά')
-            neutral.append(lemma + 'ιών')
-            neutral.append(lemma + 'ιά')
-            neutral.append(lemma + 'ιά')
+            neutral.append(lemma_adj + 'ί')
+            neutral.append(lemma_adj + 'ιού')
+            neutral.append(lemma_adj + 'ί')
+            neutral.append(lemma_adj + 'ί')
+            neutral.append(lemma_adj + 'ιά')
+            neutral.append(lemma_adj + 'ιών')
+            neutral.append(lemma_adj + 'ιά')
+            neutral.append(lemma_adj + 'ιά')
 
-        elif category == "g":
+elif category_adj == "g":
             # Adjectives: -ής, -ής, -ές
-            masculine.append(lemma + 'ής')
-            masculine.append(lemma + 'ούς')
-            masculine.append(lemma + 'ή')
-            masculine.append(lemma + 'ή')
-            masculine.append(lemma + 'είς')
-            masculine.append(lemma + 'ών')
-            masculine.append(lemma + 'είς')
-            masculine.append(lemma + 'είς')
+            masculine.append(lemma_adj + 'ής')
+            masculine.append(lemma_adj + 'ούς')
+            masculine.append(lemma_adj + 'ή')
+            masculine.append(lemma_adj + 'ή')
+            masculine.append(lemma_adj + 'είς')
+            masculine.append(lemma_adj + 'ών')
+            masculine.append(lemma_adj + 'είς')
+            masculine.append(lemma_adj + 'είς')
 
-            feminine.append(lemma + 'ής')
-            feminine.append(lemma + 'ούς')
-            feminine.append(lemma + 'ή')
-            feminine.append(lemma + 'ή')
-            feminine.append(lemma + 'είς')
-            feminine.append(lemma + 'ών')
-            feminine.append(lemma + 'είς')
-            feminine.append(lemma + 'είς')
+            feminine.append(lemma_adj + 'ής')
+            feminine.append(lemma_adj + 'ούς')
+            feminine.append(lemma_adj + 'ή')
+            feminine.append(lemma_adj + 'ή')
+            feminine.append(lemma_adj + 'είς')
+            feminine.append(lemma_adj + 'ών')
+            feminine.append(lemma_adj + 'είς')
+            feminine.append(lemma_adj + 'είς')
 
-            neutral.append(lemma + 'ές')
-            neutral.append(lemma + 'ούς')
-            neutral.append(lemma + 'ές')
-            neutral.append(lemma + 'ές')
-            neutral.append(lemma + 'ή')
-            neutral.append(lemma + 'ών')
-            neutral.append(lemma + 'ή')
-            neutral.append(lemma + 'ή')
+            neutral.append(lemma_adj + 'ές')
+            neutral.append(lemma_adj + 'ούς')
+            neutral.append(lemma_adj + 'ές')
+            neutral.append(lemma_adj + 'ές')
+            neutral.append(lemma_adj + 'ή')
+            neutral.append(lemma_adj + 'ών')
+            neutral.append(lemma_adj + 'ή')
+            neutral.append(lemma_adj + 'ή')
 
-        elif category == "h":
+elif category_adj == "h":
             # Adjectives: -ης, -α, -ικο
-            masculine.append(lemma + 'ης')
-            masculine.append(lemma + 'η')
-            masculine.append(lemma + 'η')
-            masculine.append(lemma + 'η')
-            masculine.append(lemma + 'ηδες')
-            masculine.append(lemma + 'ηδων')
-            masculine.append(lemma + 'ηδες')
-            masculine.append(lemma + 'ηδες')
+            masculine.append(lemma_adj + 'ης')
+            masculine.append(lemma_adj + 'η')
+            masculine.append(lemma_adj + 'η')
+            masculine.append(lemma_adj + 'η')
+            masculine.append(lemma_adj + 'ηδες')
+            masculine.append(lemma_adj + 'ηδων')
+            masculine.append(lemma_adj + 'ηδες')
+            masculine.append(lemma_adj + 'ηδες')
 
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'ας')
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'α')
-            feminine.append(lemma + 'ες')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'ας')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'α')
+            feminine.append(lemma_adj + 'ες')
             feminine.append('-')  # It does not exist.
-            feminine.append(lemma + 'ες')
-            feminine.append(lemma + 'ες')
+            feminine.append(lemma_adj + 'ες')
+            feminine.append(lemma_adj + 'ες')
 
-            neutral.append(lemma + 'ικο')
-            neutral.append(lemma + 'ικου')
-            neutral.append(lemma + 'ικο')
-            neutral.append(lemma + 'ικο')
-            neutral.append(lemma + 'ικα')
-            neutral.append(lemma + 'ικων')
-            neutral.append(lemma + 'ικα')
-            neutral.append(lemma + 'ικα')
+            neutral.append(lemma_adj + 'ικο')
+            neutral.append(lemma_adj + 'ικου')
+            neutral.append(lemma_adj + 'ικο')
+            neutral.append(lemma_adj + 'ικο')
+            neutral.append(lemma_adj + 'ικα')
+            neutral.append(lemma_adj + 'ικων')
+            neutral.append(lemma_adj + 'ικα')
+            neutral.append(lemma_adj + 'ικα')
 
-        elif category == "i":
+elif category_adj == "i":
             # Adjectives: -ας, -ού, -άδικο/-ούδικο
-            masculine.append(lemma + 'άς')
-            masculine.append(lemma + 'ά')
-            masculine.append(lemma + 'ά')
-            masculine.append(lemma + 'ά')
-            masculine.append(lemma + 'άδες')
-            masculine.append(lemma + 'άδων')
-            masculine.append(lemma + 'άδες')
-            masculine.append(lemma + 'άδες')
+            masculine.append(lemma_adj + 'άς')
+            masculine.append(lemma_adj + 'ά')
+            masculine.append(lemma_adj + 'ά')
+            masculine.append(lemma_adj + 'ά')
+            masculine.append(lemma_adj + 'άδες')
+            masculine.append(lemma_adj + 'άδων')
+            masculine.append(lemma_adj + 'άδες')
+            masculine.append(lemma_adj + 'άδες')
 
-            feminine.append(lemma + 'ού')
-            feminine.append(lemma + 'ούς')
-            feminine.append(lemma + 'ού')
-            feminine.append(lemma + 'ού')
-            feminine.append(lemma + 'ούδες')
-            feminine.append(lemma + 'ούδων')
-            feminine.append(lemma + 'ούδες')
-            feminine.append(lemma + 'ούδες')
+            feminine.append(lemma_adj + 'ού')
+            feminine.append(lemma_adj + 'ούς')
+            feminine.append(lemma_adj + 'ού')
+            feminine.append(lemma_adj + 'ού')
+            feminine.append(lemma_adj + 'ούδες')
+            feminine.append(lemma_adj + 'ούδων')
+            feminine.append(lemma_adj + 'ούδες')
+            feminine.append(lemma_adj + 'ούδες')
 
-            neutral.append(lemma + 'άδικο' + '/' + lemma + 'ούδικο')
-            neutral.append(lemma + 'άδικου' + '/' + lemma + 'ούδικου')
-            neutral.append(lemma + 'άδικο' + '/' + lemma + 'ούδικο')
-            neutral.append(lemma + 'άδικο' + '/' + lemma + 'ούδικο')
-            neutral.append(lemma + 'άδικα' + '/' + lemma + 'ούδικα')
-            neutral.append(lemma + 'άδικων' + '/' + lemma + 'ούδικων')
-            neutral.append(lemma + 'άδικα' + '/' + lemma + 'ούδικα')
-            neutral.append(lemma + 'άδικα' + '/' + lemma + 'ούδικα')
+            neutral.append(lemma_adj + 'άδικο' + '/' + lemma_adj + 'ούδικο')
+            neutral.append(lemma_adj + 'άδικου' + '/' + lemma_adj + 'ούδικου')
+            neutral.append(lemma_adj + 'άδικο' + '/' + lemma_adj + 'ούδικο')
+            neutral.append(lemma_adj + 'άδικο' + '/' + lemma_adj + 'ούδικο')
+            neutral.append(lemma_adj + 'άδικα' + '/' + lemma_adj + 'ούδικα')
+            neutral.append(lemma_adj + 'άδικων' + '/' + lemma_adj + 'ούδικων')
+            neutral.append(lemma_adj + 'άδικα' + '/' + lemma_adj + 'ούδικα')
+            neutral.append(lemma_adj + 'άδικα' + '/' + lemma_adj + 'ούδικα')
 
-        elif category == "polis":
+elif category_adj == "polis":
             # Irregular Adjective: πολύς, πολλή, πολύ
-            masculine.append(lemma + 'ύς')
-            masculine.append('(' + lemma + 'λού' + ')')  # Rarely used
-            masculine.append(lemma + 'ύ')
+            masculine.append(lemma_adj + 'ύς')
+            masculine.append('(' + lemma_adj + 'λού' + ')')  # Rarely used
+            masculine.append(lemma_adj + 'ύ')
             masculine.append('-')  # It does not exist
-            masculine.append(lemma + 'λοί')
-            masculine.append(lemma + 'λών')
-            masculine.append(lemma + 'λούς')
-            masculine.append('(' + lemma + 'λοί' + ')')  # Rarely used
+            masculine.append(lemma_adj + 'λοί')
+            masculine.append(lemma_adj + 'λών')
+            masculine.append(lemma_adj + 'λούς')
+            masculine.append('(' + lemma_adj + 'λοί' + ')')  # Rarely used
 
-            feminine.append(lemma + 'λή')
-            feminine.append(lemma + 'λής')
-            feminine.append(lemma + 'λή')
+            feminine.append(lemma_adj + 'λή')
+            feminine.append(lemma_adj + 'λής')
+            feminine.append(lemma_adj + 'λή')
             feminine.append('-')  # It does not exist
-            feminine.append(lemma + 'λές')
-            feminine.append(lemma + 'λών')
-            feminine.append(lemma + 'λές')
-            feminine.append('(' + lemma + 'λές' + ')')  # Rarely used
+            feminine.append(lemma_adj + 'λές')
+            feminine.append(lemma_adj + 'λών')
+            feminine.append(lemma_adj + 'λές')
+            feminine.append('(' + lemma_adj + 'λές' + ')')  # Rarely used
 
-            neutral.append(lemma + 'ύ')
-            neutral.append('(' + lemma + 'λού' + ')')  # Rarely used
-            neutral.append(lemma + 'ύ')
+            neutral.append(lemma_adj + 'ύ')
+            neutral.append('(' + lemma_adj + 'λού' + ')')  # Rarely used
+            neutral.append(lemma_adj + 'ύ')
             neutral.append('-')  # It does not exist
-            neutral.append(lemma + 'λά')
-            neutral.append(lemma + 'λών')
-            neutral.append(lemma + 'λά')
-            neutral.append('(' + lemma + 'λά' + ')')  # Rarely used
-        else:
-            print('ERROR: No other POS implemented yet…')
+            neutral.append(lemma_adj + 'λά')
+            neutral.append(lemma_adj + 'λών')
+            neutral.append(lemma_adj + 'λά')
+            neutral.append('(' + lemma_adj + 'λά' + ')')  # Rarely used
+else:
+     print('ERROR: No other POS implemented yet…')
             # There are a few adjective categories remaining.
-        return inflection
+print(inflection) 
 
 
 class verb:
 
-    def __init__(self, lemma, syzigia='A', category="a"):
+    def __init__(self, lemma, syzigia, category) :
         self.lemma = lemma
         self.syzigia = syzigia
         self.category = category
 
-    def normal(self, lemma, syzigia, category):
+    def inflect(lemma, syzigia, category):
         """
         Based on the solution of AM296-f3662010
 
@@ -351,34 +371,41 @@ class verb:
         :return:
         """
         inflection = []
-        if syzigia == "A":
-            if category == "a":
-                inflection.append(lemma + 'ω')
-                inflection.append(lemma + 'εις')
-                inflection.append(lemma + 'ει')
-                inflection.append(lemma + 'ουμε')
-                inflection.append(lemma + 'ετε')
-                inflection.append(lemma + 'ουν' + '/' + lemma + 'ουνε')
-            else:
-                print('ERROR: No other category exists.')
-        elif syzigia == "B":
-            if category == "a":
-                inflection.append(lemma + 'άω' + '/' + lemma + 'ώ')
-                inflection.append(lemma + 'άς')
-                inflection.append(lemma + 'άει' + '/' + lemma + 'ά')
-                inflection.append(lemma + 'άμε' + '/' + lemma + 'ούμε')
-                inflection.append(lemma + 'άτε')
-                inflection.append(lemma + 'άν' + '/' + lemma + 'ούν')
-            elif category == "b":
-                inflection.append(lemma + 'ώ')
-                inflection.append(lemma + 'είς')
-                inflection.append(lemma + 'εί')
-                inflection.append(lemma + 'ούμε')
-                inflection.append(lemma + 'είτε')
-                inflection.append(lemma + 'ούν' + '/' + lemma + 'ούνε')
-            else:
-                print('ERROR: No other category exists.')
-        else:
+        syzigia
+        category
+
+
+inflection=[]
+if syzigia == "A":
+    if category == "a":
+            inflection.append(lemma + 'ω')
+            inflection.append(lemma + 'εις')
+            inflection.append(lemma + 'ει')
+            inflection.append(lemma + 'ουμε')
+            inflection.append(lemma + 'ετε')
+            inflection.append(lemma + 'ουν' + '/' + lemma + 'ουνε')
+    else:
+            print('ERROR: No other category exists.')
+
+elif syzigia == "B":
+    if category == "a":
+            inflection.append(lemma + 'άω' + '/' + lemma + 'ώ')
+            inflection.append(lemma + 'άς')
+            inflection.append(lemma + 'άει' + '/' + lemma + 'ά')
+            inflection.append(lemma + 'άμε' + '/' + lemma + 'ούμε')
+            inflection.append(lemma + 'άτε')
+            inflection.append(lemma + 'άν' + '/' + lemma + 'ούν')
+    elif category == "b":
+            inflection.append(lemma + 'ώ')
+            inflection.append(lemma + 'είς')
+            inflection.append(lemma + 'εί')
+            inflection.append(lemma + 'ούμε')
+            inflection.append(lemma + 'είτε')
+            inflection.append(lemma + 'ούν' + '/' + lemma + 'ούνε')
+    else:
+            print('ERROR: No other category exists.')
+
+elif syzigia == "Irregular Verb":
             # irregular verbs(syzigia=="irregular")
             inflection.append(lemma + 'ω')
             inflection.append(lemma + 'ς')
@@ -387,20 +414,16 @@ class verb:
             inflection.append(lemma + 'τε')
             inflection.append(lemma + 'νε')
 
-        return inflection
+elif syzigia == "Contracting Verb":
+            inflection.append(lemma + "ω")
+            inflection.append(lemma + "ς")
+            inflection.append(lemma + "ει")
+            inflection.append(lemma + "με")
+            inflection.append(lemma + "τε")
+            inflection.append(lemma + "νε")
+
+else :
+        print('No other "syzigia" implemented yet... ')
 
 
-    def idioklita(self, lemma):
-        """
-        Based on the solution of AM296-f3662009
-        :param lemma:
-        :return:
-        """
-        inflection = []
-        inflection.append(lemma + "ω")
-        inflection.append(lemma + "ς")
-        inflection.append(lemma + "ει")
-        inflection.append(lemma + "με")
-        inflection.append(lemma + "τε")
-        inflection.append(lemma + "νε")
-        return inflection
+print(inflection)
